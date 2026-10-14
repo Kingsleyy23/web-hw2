@@ -1,0 +1,53 @@
+Critical Thinking
+
+01) The .quote selector normally gives each review box the background
+color #E1D697. When I temporarily removed that declaration, no other
+rule gave the .quote element a background color, so its background
+became transparent. This allowed the background image from the body
+rule to show through the review box.
+
+The .quote selector is a class selector, so it has higher specificity
+than an element selector. If two rules with the same specificity set
+the same property, the rule that appears later in the stylesheet would
+take priority. In this test, however, no later rule sets a background
+color for .quote, so the body background remains visible through it.
+
+CSS Excerpt:
+
+body {
+    background-image: url("images/background.png");
+}
+
+.quote {
+    background-color: #E1D697;
+    border: 2px solid gray;
+    padding: 8px;
+    margin-bottom: 8px;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+Evidence:
+- evidence/cascade-before.png
+- evidence/cascade-after.png
+
+
+
+02) At a viewport width of 480px:
+
+Computed width of #reviews: 448px
+Computed width of #overview: 448px
+
+I chose to stack the review section and the General Overview vertically
+on screens 700px wide or smaller. This makes the page longer vertically,
+but it keeps the text readable and prevents horizontal scrolling.
+
+I temporarily changed the mobile #movie width from 95% to 800px.
+At 480px, the fixed 800px width caused the page to extend beyond the
+viewport and created horizontal scrolling. I restored the width to 95%
+because it allows the layout to shrink with the screen and keeps the
+content inside the viewport.
+
+Evidence:
+- evidence/responsive-480.png
+- evidence/responsive-overflow.png

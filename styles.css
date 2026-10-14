@@ -1,0 +1,247 @@
+/*
+Name: Kingsley Akhigbe
+Section: 002
+Assignment: Homework 2
+Description: Styles for the TMNT movie review webpage.
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("images/background.png");
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 8pt;
+}
+
+
+/* Top banner */
+#banner {
+    height: 50px;
+    background-image: url("images/bannerbackground.png");
+    background-repeat: repeat-x;
+    text-align: center;
+}
+
+#banner img {
+    max-width: 100%;
+}
+
+
+/* Movie title */
+h1 {
+    text-align: center;
+    font-size: 24pt;
+    font-weight: bold;
+    font-family: Tahoma, Verdana, sans-serif;
+}
+
+
+/* Main movie box */
+#movie {
+    width: 800px;
+    margin: 0 auto;
+    border: 4px solid gray;
+    display: grid;
+    grid-template-columns: 550px 250px;
+}
+
+
+/* Left side with reviews */
+#reviews {
+    width: 550px;
+}
+
+
+/* Right side with movie information */
+#overview {
+    width: 250px;
+    background-color: #A2B964;
+    font-family: Arial, sans-serif;
+    font-size: 8pt;
+}
+
+
+/* Movie poster */
+#poster {
+    width: 250px;
+    display: block;
+}
+
+
+/* Movie information */
+#overview dl {
+    padding: 0 10px;
+}
+
+
+/* Movie information headings */
+#overview dt {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* Movie information details */
+#overview dd {
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+
+
+/* Rotten Tomatoes rating bar */
+#rating {
+    background-image: url("images/rottenbackground.png");
+    background-repeat: repeat-x;
+    display: flex;
+    align-items: center;
+}
+
+
+/* 32% score */
+.score {
+    font-size: 48pt;
+    font-weight: bold;
+    color: red;
+}
+
+
+/* Total number of reviews */
+.total {
+    color: white;
+    margin-left: 5px;
+}
+
+
+/* Holds the two review columns */
+#review-columns {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/* Each review column */
+.review-column {
+    width: 47%;
+}
+
+
+/* Each review */
+.review {
+    margin-bottom: 20px;
+}
+
+
+/* Review quote box */
+.quote {
+    background-color: #E1D697;
+    border: 2px solid gray;
+    padding: 8px;
+    margin-bottom: 8px;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+
+/* Clears the floated tomato icon */
+.quote::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/* Fresh or rotten icon */
+.quote img {
+    float: left;
+    margin-right: 5px;
+}
+
+
+/* Critic information */
+.critic {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+/* Critic icon */
+.critic img {
+    float: left;
+    margin-right: 5px;
+}
+
+
+/* Review counter at bottom */
+#review-counter {
+    background-color: #A2B964;
+    text-align: center;
+    padding: 5px;
+}
+
+
+/* Images should not become wider than their container */
+img {
+    max-width: 100%;
+}
+
+
+/* Validator links */
+#validators {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    padding: 5px;
+}
+
+#validators a {
+    margin-left: 5px;
+}
+
+
+/* Mobile layout */
+@media (max-width: 700px) {
+
+    #movie,
+    #movie * {
+        box-sizing: border-box;
+    }
+
+    #movie {
+        width: 95%;
+        max-width: 95%;
+        grid-template-columns: 1fr;
+    }
+
+    #reviews {
+        width: 100%;
+        min-width: 0;
+    }
+
+    #overview {
+        width: 100%;
+        min-width: 0;
+    }
+
+    #poster {
+        width: 100%;
+    }
+
+    #rating {
+        width: 100%;
+        min-width: 0;
+    }
+
+    #review-columns {
+        width: 100%;
+        min-width: 0;
+        flex-direction: column;
+    }
+
+    .review-column {
+        width: 94%;
+        min-width: 0;
+        margin: 0 auto;
+    }
+
+}
